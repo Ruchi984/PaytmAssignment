@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="6" passed="6">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Movies" duration-ms="49504" started-at="2020-06-22T06:14:06Z" finished-at="2020-06-22T06:14:55Z">
+    <groups>
+    </groups>
+    <test name="Content" duration-ms="49504" started-at="2020-06-22T06:14:06Z" finished-at="2020-06-22T06:14:55Z">
+      <class name="com.Testcases">
+        <test-method status="PASS" signature="teststatuscode()[pri:0, instance:com.Testcases@3532ec19]" name="teststatuscode" duration-ms="46724" started-at="2020-06-22T11:44:06Z" finished-at="2020-06-22T11:44:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teststatuscode -->
+        <test-method status="PASS" signature="movieReleaseDateCheck()[pri:1, instance:com.Testcases@3532ec19]" name="movieReleaseDateCheck" duration-ms="384" started-at="2020-06-22T11:44:52Z" finished-at="2020-06-22T11:44:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- movieReleaseDateCheck -->
+        <test-method status="PASS" signature="moviePosterUrljpgFormat()[pri:2, instance:com.Testcases@3532ec19]" name="moviePosterUrljpgFormat" duration-ms="312" started-at="2020-06-22T11:44:53Z" finished-at="2020-06-22T11:44:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- moviePosterUrljpgFormat -->
+        <test-method status="PASS" signature="paytmMovieCodeUnique()[pri:3, instance:com.Testcases@3532ec19]" name="paytmMovieCodeUnique" duration-ms="316" started-at="2020-06-22T11:44:53Z" finished-at="2020-06-22T11:44:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- paytmMovieCodeUnique -->
+        <test-method status="PASS" signature="languageFormat()[pri:4, instance:com.Testcases@3532ec19]" name="languageFormat" duration-ms="317" started-at="2020-06-22T11:44:53Z" finished-at="2020-06-22T11:44:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- languageFormat -->
+        <test-method status="PASS" signature="isContentAvailable()[pri:5, instance:com.Testcases@3532ec19]" name="isContentAvailable" duration-ms="1416" started-at="2020-06-22T11:44:54Z" finished-at="2020-06-22T11:44:55Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- isContentAvailable -->
+      </class> <!-- com.Testcases -->
+    </test> <!-- Content -->
+  </suite> <!-- Movies -->
+</testng-results>

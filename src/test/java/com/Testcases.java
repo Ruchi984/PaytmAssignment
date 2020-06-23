@@ -4,7 +4,9 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -54,7 +56,7 @@ public class Testcases extends apiResponse{
 			{
 				
 			Assert.assertTrue(movieReleaseDate.compareTo(currentDate)>0);			
-			System.out.println("Movie releasing date is: "+movieReleaseDate);
+			System.out.println("Movie releasing dateat index "+i+" is: "+movieReleaseDate);
 		
 			}
 		
@@ -67,6 +69,7 @@ public class Testcases extends apiResponse{
 	public void moviePosterUrljpgFormat() throws ParseException
 	{
 		JSONArray jarray=apiArray();
+		
 		for(int i=0;i<jarray.size();i++)
 		{
 			JSONObject record=(JSONObject)jarray.get(i);
@@ -76,35 +79,44 @@ public class Testcases extends apiResponse{
 			Matcher matcher=pat.matcher(moviePosterURL);
 
 			Assert.assertTrue(matcher.matches());
-			System.out.println("Movie Poster URL in .jpg format is: "+moviePosterURL);
+			System.out.println("Movie Poster URL at index "+ i +" in .jpg format is: "+moviePosterURL);
 		}
 		
 	}
+	
 	
 	@Test(priority=3)
 	public void paytmMovieCodeUnique() throws ParseException
 	{
 		JSONArray jarray=apiArray();
+		List<String> jsonlist = new ArrayList<String>();
+		
 		for(int k=0;k<jarray.size();k++)
 		{
 			JSONObject record=(JSONObject)jarray.get(k);
-			String movieCode =(String)record.get("paytmMovieCode");
-			
-			boolean Code=movieCodeUnique(movieCode);
-			
-			if(Code==false)
-			{
-				Assert.assertFalse(false);
-			}
-			else
-			{
-				Assert.assertTrue(true);
-			}
-			System.out.println("Is this Paytm Movie Code--> "+movieCode+" is Uinque: "+Code);
-			
+						
+			jsonlist.add((String)record.get("paytmMovieCode"));
 		}
 		
-	}	
+		for(int i=0;i<jsonlist.size();i++)
+		{
+			for(int j=0;j<jsonlist.size();j++)
+			{
+				if(i!=j)
+				{	
+					
+				Assert.assertFalse(jsonlist.get(i)==jsonlist.get(j));
+				if(jsonlist.get(i)==jsonlist.get(j))
+					{
+				System.out.println("Movie code is not unique"+jsonlist.get(i)+jsonlist.get(j));
+					}
+				
+				}
+			}
+			System.out.println("Paytm Movie Code at index " + i+" is Uinque: "+ jsonlist.get(i));
+			
+		}
+	}
 	
 	@Test(priority=4)
 	public void languageFormat() throws ParseException
